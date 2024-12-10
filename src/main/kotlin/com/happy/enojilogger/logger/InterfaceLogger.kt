@@ -1,19 +1,28 @@
 package com.happy.enojilogger.logger
 
 interface InterfaceLogger {
-
-    // trace - debug - info - warn - error
-
     fun trace(
-        vararg message: String,
+        vararg messages: String,
         throwable: Throwable? = null
     )
 
-    fun debug()
+    fun debug(
+        vararg messages: String,
+        throwable: Throwable? = null
+    )
 
-    fun info()
+    fun info(
+        vararg messages: String,
+        throwable: Throwable? = null
+    )
 
-    fun warn()
+    fun warn(
+        vararg messages: String,
+        throwable: Throwable? = null
+    )
 
-    fun error()
+    fun error(
+        vararg messages: String,
+        throwable: Throwable? = null
+    )
 }
