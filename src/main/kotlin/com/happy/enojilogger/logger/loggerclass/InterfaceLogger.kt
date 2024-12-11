@@ -1,4 +1,4 @@
-package com.happy.enojilogger.logger
+package com.happy.enojilogger.logger.loggerclass
 
 interface InterfaceLogger {
     fun trace(
