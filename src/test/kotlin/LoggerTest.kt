@@ -6,14 +6,14 @@ internal class LoggerTest {
 
     @Test
     fun logFactoryTestCheck() {
-        val logFactoryCheck = EmojiLoggerFactory(
+        val logFactory = EmojiLoggerFactory(
             logger = LoggerFactory.getLogger(this.javaClass)
         )
 
-        logFactoryCheck.trace("TRACE Message Test !!")
-        logFactoryCheck.debug("DEBUG Message Test !!")
-        logFactoryCheck.info("INFO Message Test !!")
-        logFactoryCheck.warn("WARN Message Test !!")
-        logFactoryCheck.error("ERROR Message Test !!")
+        logFactory.trace("TRACE Message Test !!")
+        logFactory.debug("DEBUG Message Test !!")
+        logFactory.info("INFO Message Test !!")
+        logFactory.warn("WARN Message Test !!")
+        logFactory.error("ERROR Message Test !!")
     }
 }
