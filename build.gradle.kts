@@ -3,7 +3,7 @@ plugins {
     id("org.jlleitschuh.gradle.ktlint") version "11.5.1"
 }
 
-group = "com.ic"
+group = "com.emoji-logger"
 version = "1.0-SNAPSHOT"
 
 repositories {
@@ -12,8 +12,7 @@ repositories {
 
 dependencies {
     implementation("org.slf4j:slf4j-api:2.0.16")
-    implementation("ch.qos.logback:logback-classic:1.4.11")
-    implementation("org.apache.logging.log4j:log4j-core:2.24.2")
+    implementation("ch.qos.logback:logback-classic:1.5.12")
     testImplementation(kotlin("test"))
 }
 
