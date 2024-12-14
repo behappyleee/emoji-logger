@@ -1,12 +1,11 @@
 package com.happy.enojilogger.logger
 
-import com.happy.enojilogger.logger.loggerclass.InterfaceLogger
+import com.happy.enojilogger.logger.logger.InterfaceLogger
 import type.EmojiPrintMode
 import type.LevelEmojiLogger
 
 class EmojiLoggerFactory(
     private val clazz: Class<*>,
-    private val defaultEmoji: String = "🔔",
     private val emojiMode: EmojiPrintMode = EmojiPrintMode.LIGHT
 ) : InterfaceLogger {
 
@@ -39,7 +38,6 @@ class EmojiLoggerFactory(
     ) {
         val emojiPrefix = EmojiPrinter(emojiMode = emojiMode).getEmojiIconByLevel(level = level)
         val message = messages.joinToString(" ")
-
         when (level) {
             LevelEmojiLogger.TRACE -> logger.trace(messages = arrayOf("$emojiPrefix $message"), throwable = throwable)
             LevelEmojiLogger.DEBUG -> logger.debug(messages = arrayOf("$emojiPrefix $message"), throwable = throwable)
