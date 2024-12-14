@@ -1,6 +1,7 @@
-package com.happy.enojilogger.logger.loggerclass
+package com.happy.enojilogger.logger.logger
 
 interface InterfaceLogger {
+
     fun trace(
         vararg messages: String,
         throwable: Throwable? = null
@@ -25,4 +26,8 @@ interface InterfaceLogger {
         vararg messages: String,
         throwable: Throwable? = null
     )
+
+    companion object {
+        const val ARGUMENT_MESSAGE_DELIMITER = ","
+    }
 }
