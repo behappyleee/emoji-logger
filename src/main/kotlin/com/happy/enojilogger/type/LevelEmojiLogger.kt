@@ -1,4 +1,4 @@
-package type
+package com.happy.enojilogger.type
 
 enum class LevelEmojiLogger {
     TRACE,

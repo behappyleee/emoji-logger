@@ -1,7 +1,7 @@
 package com.happy.enojilogger.logger
 
-import type.EmojiPrintMode
-import type.LevelEmojiLogger
+import com.happy.enojilogger.type.EmojiPrintMode
+import com.happy.enojilogger.type.LevelEmojiLogger
 
 class EmojiPrinter(
     private val emojiMode: EmojiPrintMode
