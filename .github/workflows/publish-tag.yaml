@@ -1,0 +1,43 @@
+name: Release to to jitpack
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_version:
+        description: "Release Version"
+        required: true
+
+permissions:
+  contents: write
+  packages: write
+  id-token: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up Jdk 8
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'openjdk'
+          java-version: '8'
+          server-id: maven
+          settings-path: ${{ github.workspace }}
+
+      - name: Configure Git
+        run: |
+            git config --global user.name "behappyleeee"
+            git config --global user.email "dhfhfkwhdk@naver.com"
+
+      - name: Set Release Version
+        run: |
+          ./gradlew setVersion -Pversion=${{ inputs.release_version }}
+
+      - name: Create Git Tag
+        run: |
+          git tag -a "v${{ inputs.release_version }}" -m "Release version ${{ inputs.release_version }}"
+          git push origin "v${{ inputs.release_version }}"    
