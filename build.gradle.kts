@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "com.emoji-logger"
-version = "1.0-SNAPSHOT"
+version = "0.0.1"
 
 repositories {
     mavenCentral()
@@ -13,7 +13,6 @@ repositories {
 dependencies {
     implementation("org.slf4j:slf4j-api:1.7.7")
     implementation("ch.qos.logback:logback-classic:1.2.13")
-
     implementation(kotlin("stdlib"))
 
     testImplementation(kotlin("test"))
@@ -37,9 +36,4 @@ tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
         apiVersion = "1.8"
         languageVersion = "1.8"
     }
-}
-
-ktlint {
-    version.set("11.5.1")
-    android.set(false)
 }

@@ -1,8 +1,8 @@
 package com.happy.enojilogger.logger
 
-import org.slf4j.Logger
 import com.happy.enojilogger.type.EmojiPrintMode
 import com.happy.enojilogger.type.LevelEmojiLogger
+import org.slf4j.Logger
 
 class EmojiLoggerFactory(
     private val logger: Logger,
