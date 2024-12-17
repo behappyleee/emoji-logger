@@ -1,10 +1,12 @@
 plugins {
+    id("java")
+    id("maven-publish")
     kotlin("jvm") version "1.8.22"
     id("org.jlleitschuh.gradle.ktlint") version "11.5.1"
 }
 
 group = "com.emoji-logger"
-version = "0.0.1"
+version = "0.0.2"
 
 repositories {
     mavenCentral()
