@@ -12,6 +12,14 @@ repositories {
     mavenCentral()
 }
 
+publishing {
+    publications {
+        create<MavenPublication>("mavenJava") {
+            from(components["java"])
+        }
+    }
+}
+
 dependencies {
     implementation("org.slf4j:slf4j-api:1.7.7")
     implementation("ch.qos.logback:logback-classic:1.2.13")
