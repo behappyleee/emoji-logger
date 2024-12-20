@@ -2,12 +2,14 @@ package com.happy.enojilogger.logger
 
 import com.happy.enojilogger.type.EmojiPrintMode
 import com.happy.enojilogger.type.LevelEmojiLogger
-import org.slf4j.Logger
+import org.slf4j.LoggerFactory
 
-class EmojiLoggerFactory(
-    private val logger: Logger,
+class EmojiLoggerFactory<T>(
+    private val clazz: Class<T>,
     private val emojiMode: EmojiPrintMode = EmojiPrintMode.LIGHT
 ) {
+    private val logger = LoggerFactory.getLogger(clazz)
+
     fun trace(message: String) {
         logger.trace("${EmojiPrinter(emojiMode).getEmojiIconByLevel(LevelEmojiLogger.TRACE)} $message")
     }

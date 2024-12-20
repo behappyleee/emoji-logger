@@ -1,13 +1,10 @@
 import com.happy.enojilogger.logger.EmojiLoggerFactory
 import com.happy.enojilogger.type.EmojiPrintMode
 import org.junit.jupiter.api.Test
-import org.slf4j.Logger
-import org.slf4j.LoggerFactory
 
 class EmojiLoggerFactoryTest {
 
-    private val logger: Logger = LoggerFactory.getLogger(EmojiLoggerFactoryTest::class.java)
-    private val emojiLogger = EmojiLoggerFactory(logger, EmojiPrintMode.LIGHT)
+    private val emojiLogger = EmojiLoggerFactory(clazz = EmojiLoggerFactoryTest::class.java, emojiMode = EmojiPrintMode.ICON)
 
     @Test
     fun `should log trace messages with emoji`() {
